@@ -35,10 +35,9 @@ class EmailTemplateController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->attach_file;
-        // $files = $request->file('attach_file');
-        // return \response(['fileextension' => $files]);
-
+        $filename = \random_int(2,5).uniqid('file');
+        $request->file('attach_file')->storeAs('uploads', $filename );
+        return 'Success';
         $request->validate([
             'template_name'     =>  'required',
             'mail_subject'      =>  'required',

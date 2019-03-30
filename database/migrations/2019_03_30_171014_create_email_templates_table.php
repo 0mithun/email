@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEmailTemplateTable extends Migration
+class CreateEmailTemplatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateEmailTemplateTable extends Migration
      */
     public function up()
     {
-        Schema::create('email_template', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('email_templates', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('template_name');
             $table->string('mail_subject');
-            $table->text('email_body');
+            $table->text('mail_body');
             $table->string('attach_file', 100)->nullable();
             $table->timestamps();
         });
@@ -30,6 +30,6 @@ class CreateEmailTemplateTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('email_template');
+        Schema::dropIfExists('email_templates');
     }
 }

@@ -41,6 +41,13 @@ class EmailTemplateController extends Controller
             'mail_body'         =>  'required',
             // 'template_name'     =>  'required',
         ]);
+        EmailTemplate::create($request->all());
+        // return $request->all();
+
+        // if($request->expectsJson()){
+
+        // }
+
     }
 
     /**

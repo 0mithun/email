@@ -18810,3 +18810,15 @@ a.text-dark:focus {
   color: white;
 }
 
+.ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline.ck-blurred {
+  min-height: 400px;
+}
+
+.ck-editor__editable:focus {
+  min-height: 400px;
+}
+
+input.validate-error {
+  border: 1px solid red;
+}
+

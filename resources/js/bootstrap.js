@@ -16,8 +16,8 @@ try {
     require('ionicons');
     require('datatables');
     require('datatables.net-bs4');
-    require('summernote/dist/summernote.css');
-    require('summernote');
+    // require('summernote/dist/summernote.css');
+    // require('summernote');
 
 } catch (e) {}
 

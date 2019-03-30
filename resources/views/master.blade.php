@@ -238,6 +238,7 @@
     <script src="{{ asset('js/app.js')}}"></script>
     <script>
       $('#email-formate-table').dataTable();
+      /*
     $('#add_new_modal').on('shown.bs.modal', function() {
       $('#mail_body').summernote({
          dialogsInBody: true,
@@ -259,5 +260,7 @@
        }
       });
     });
+
+    */
 </script>
 </html>

@@ -5,10 +5,117 @@
 // Variables
 @import 'variables';
 
+
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+@import '~ionicons/dist/css/ionicons.css';
+@import '~font-awesome/css/font-awesome.css';
+@import '~admin-lte/dist/css/AdminLTE.min.css';
+
+@import '~admin-lte/dist/css/skins/_all-skins.css';
+
+@import '~datatables/media/css/jquery.dataTables.css';
+
 
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.main-header .sidebar-toggle {
+  float: left;
+  background-color: transparent;
+  background-image: none;
+  padding: 0px;
+  font-family: fontAwesome;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: inherit;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.navbar-custom-menu > .navbar-nav > li {
+  position: relative;
+  padding: 5px 10px;
+}
+
+.sidebar-menu > li .label, .sidebar-menu > li .badge {
+  margin-right: 5px;
+  padding: 0px 5px;
+  border-radius: 3px;
+}
+
+.skin-blue .sidebar-form input[type="text"], .skin-blue .sidebar-form .btn {
+  box-shadow: none;
+  background-color: #374850;
+  border: 1px solid transparent;
+  height: 35px;
+  border: none;
+}
+
+.login-page, .register-page {
+  background: #d2d6de;
+}
+
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+ 
+}
+
+.form-control {
+  border-radius: 0;
+  box-shadow: none;
+  border-color: #d2d6de;
+}
+
+.form-control:focus {
+  border-color: #3c8dbc;
+  box-shadow: none;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  box-sizing: border-box;
+  display: inline-block;
+  min-width: 1.5em;
+  padding:0;
+  margin-left: 0px;
+  text-align: center;
+  text-decoration: none !important;
+  cursor: pointer;
+  color: #333 !important;
+  border: none;
+  border-radius: 2px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+  cursor: default;
+  color: #666 !important;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  color: white !important;
+  border: none;
+  background-color: #585858;
+  background: linear-gradient(to bottom, #585858 0%, #111 100%);
+}
+
+.logo a.router-link-active {
+  color: white;
 }

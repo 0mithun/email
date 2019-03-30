@@ -11,6 +11,24 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/','AdminController@index');
+    Route::get('/dashboard','AdminController@index');
+
+    Route::resource('email-template', 'EmailTemplateController')->except(['create']);
 });
+
+
+// Route::view('/', 'home');
+// Route::view('/{any}', 'home');
+// Route::view('/{any}/{param}', 'home');

@@ -3292,6 +3292,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
  // import CKEditor from '@ckeditor/ckeditor5-vue';
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3314,7 +3315,15 @@ __webpack_require__.r(__webpack_exports__);
     add: function add() {
       var _this = this;
 
-      axios.post('/email-template', this.form).then(function (res) {
+      var formData = new FormData(document.getElementById('new'));
+      formData.append('mail_body', this.form.mail_body);
+      formData.append('attach_file', this.form.attach_file);
+      var config = {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      };
+      axios.post('/email-template', formData, config).then(function (res) {
         console.log(res);
         _this.errors = [];
         _this.form.template_name = "", _this.form.mail_subject = "", _this.form.mail_body = "";
@@ -3323,9 +3332,9 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     attach_file: function attach_file(e) {
-      console.log(e);
-      var files = e.targer.files[0];
-      this.attach_file = files;
+      var files = e.target.files[0];
+      this.form.attach_file = files;
+      console.log(this.form.attach_file);
     }
   }
 });
@@ -70982,6 +70991,7 @@ var render = function() {
                       "form",
                       {
                         attrs: {
+                          id: "new",
                           action: "",
                           method: "post",
                           enctype: "multipart/form-data"

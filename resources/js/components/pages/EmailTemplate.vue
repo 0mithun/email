@@ -37,6 +37,7 @@
                                 </div>
                                 <div class="modal-body">
                                     <form
+                                        id="new"
                                         action=""
                                         method="post"
                                         enctype="multipart/form-data"
@@ -193,7 +194,15 @@
         },
         methods:{
             add(){
-                axios.post('/email-template',this.form)
+               let formData = new FormData(document.getElementById('new'));
+               formData.append('mail_body', this.form.mail_body)
+               formData.append('attach_file', this.form.attach_file)
+                let config = {
+                    headers: {
+                    'Content-Type': 'multipart/form-data', 
+                }
+                };
+                axios.post('/email-template',formData, config)
                 .then(res=>{
                     console.log(res)
                     this.errors = [];
@@ -205,9 +214,9 @@
                 })
             }, 
             attach_file(e){
-                console.log(e)
-                let files = e.targer.files[0]
-                this.attach_file = files
+                let files = e.target.files[0]
+                this.form.attach_file=files
+                console.log(this.form.attach_file)
             }
         }
         

@@ -35,13 +35,17 @@ class EmailTemplateController extends Controller
      */
     public function store(Request $request)
     {
+        return $request->attach_file;
+        // $files = $request->file('attach_file');
+        // return \response(['fileextension' => $files]);
+
         $request->validate([
             'template_name'     =>  'required',
             'mail_subject'      =>  'required',
             'mail_body'         =>  'required',
             // 'template_name'     =>  'required',
         ]);
-        EmailTemplate::create($request->all());
+        // EmailTemplate::create($request->all());
         // return $request->all();
 
         // if($request->expectsJson()){
